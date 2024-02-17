@@ -11,7 +11,7 @@ def export():
     swagger_yaml = yaml.load(json.dumps(swagger_json), Loader=yaml.FullLoader)
     with open(SWAGGER_PATH, "w") as f:
         f.write(yaml.dump(swagger_yaml))
-        print("\n swagger.yaml updated!")
+        print("swagger.yaml updated!")
 
 
 if __name__ == '__main__':

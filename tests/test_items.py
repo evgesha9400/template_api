@@ -1,5 +1,7 @@
+import pytest
 from fastapi.testclient import TestClient
 from main import app
+
 
 client = TestClient(app)
 
@@ -10,8 +12,9 @@ def test_get_item():
     assert response.json() == {"item_id": 1, "item_name": "Item 1"}
 
 
-def test_get_items():
-    response = client.get("/items?item_ids=1,2")
+@pytest.mark.parametrize("query", ["item_ids=1,2", "item_ids=1&item_ids=2"])
+def test_get_items(query):
+    response = client.get(f"/items?{query}")
     assert response.status_code == 200
     assert response.json() == {
         "items": [
