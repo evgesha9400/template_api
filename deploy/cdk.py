@@ -49,8 +49,9 @@ class TemplateApiDeploymentStack(Stack):
 
 
 app = App()
-env = Environment(
-    account=os.getenv("CDK_DEFAULT_ACCOUNT"), region=os.getenv("CDK_DEFAULT_REGION")
-)
-TemplateApiDeploymentStack(app, construct_id="TemplateApi")
+account = os.getenv("CDK_DEFAULT_ACCOUNT")
+region = os.getenv("CDK_DEFAULT_REGION")
+print(f"Deploying TemplateAPI stack in {account}:{region}")
+env = Environment(account=account, region=region)
+TemplateApiDeploymentStack(app, construct_id="TemplateApi", env=env)
 app.synth()
