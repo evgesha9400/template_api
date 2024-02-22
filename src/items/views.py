@@ -22,7 +22,7 @@ async def get_item(
     response_model=res.GetItems,
 )
 async def get_items(
-    item_ids: query.ItemIds,
+    item_ids: query.ItemIds = None,
 ):
     items = []
     for item_id in item_ids:
