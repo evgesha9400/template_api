@@ -20,7 +20,6 @@ ItemIds = Annotated[
     Query(
         title="Item IDs",
         description="The IDs of the items to get",
-        required=False,
         example="item_ids=1,2,3 OR item_ids=1&item_ids=2&item_ids=3",
     ),
     BeforeValidator(string_to_list),
