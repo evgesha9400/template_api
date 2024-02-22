@@ -10,7 +10,7 @@ from aws_cdk import aws_ecs_patterns as ecs_patterns
 from constructs import Construct
 
 
-ROOT_DIR = pathlib.Path(__file__).parent.resolve()
+PROJECT_ROOT = pathlib.Path(__file__).parent.parent.resolve()
 
 
 class TemplateApiDeploymentStack(Stack):
