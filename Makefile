@@ -4,6 +4,8 @@ run:
 requirements:
 	@poetry export -f requirements.txt --without-hashes > src/requirements.txt
 
-export_swagger:
-	@PYTHONPATH=src python3 update_swagger.py
+swagger:
+	@PYTHONPATH=src python3 swagger.py
 
+deploy: requirements
+	cd cdk && cdk deploy
