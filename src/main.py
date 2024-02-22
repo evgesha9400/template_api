@@ -9,8 +9,3 @@ app = FastAPI(
     version="0.1.0",
 )
 app.include_router(items)
-
-
-@app.get("/", include_in_schema=False)
-async def root():
-    return RedirectResponse(url="/docs")
