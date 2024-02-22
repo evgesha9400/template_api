@@ -1,1 +1,2 @@
 /tests/.pytest_cache/
+/deploy/cdk.out/
