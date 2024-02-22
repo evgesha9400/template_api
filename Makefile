@@ -8,4 +8,4 @@ swagger:
 	@PYTHONPATH=src python3 swagger.py
 
 deploy: requirements
-	cd cdk && cdk deploy
+	cd deploy && cdk deploy
