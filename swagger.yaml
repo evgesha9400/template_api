@@ -122,7 +122,7 @@ paths:
       operationId: get_items_items_get
       parameters:
       - description: The IDs of the items to get
-        example: item_ids=1&item_ids=2&item_ids=3
+        example: item_ids=1,2,3 OR item_ids=1&item_ids=2&item_ids=3
         in: query
         name: item_ids
         required: true
@@ -130,7 +130,6 @@ paths:
           description: The IDs of the items to get
           items:
             type: integer
-          required: false
           title: Item IDs
           type: array
       responses:
