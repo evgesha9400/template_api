@@ -24,3 +24,24 @@ ItemIds = Annotated[
     ),
     BeforeValidator(string_to_list),
 ]
+
+Limit = Annotated[
+    int,
+    Query(
+        title="Limit",
+        description="The maximum number of items to get",
+        ge=1,
+        le=100,
+        example=10,
+    ),
+]
+
+Offset = Annotated[
+    int,
+    Query(
+        title="Offset",
+        description="The number of items to skip",
+        ge=0,
+        example=0,
+    ),
+]

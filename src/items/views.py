@@ -23,10 +23,13 @@ async def get_item(
 )
 async def get_items(
     item_ids: query.ItemIds = None,
+    offset: query.Offset = 0,
+    limit: query.Limit = 10,
 ):
     items = []
-    for item_id in item_ids:
-        items.append(res.GetItem(item_id=item_id, item_name=f"Item {item_id}"))
+    if item_ids is not None:
+        for item_id in item_ids:
+            items.append(res.GetItem(item_id=item_id, item_name=f"Item {item_id}"))
     return res.GetItems(items=items)
 
 
