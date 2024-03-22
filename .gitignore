@@ -1,1 +1,3 @@
 /tests/.pytest_cache/
+/deploy/cdk.out/
+/deploy/cdk.context.json
