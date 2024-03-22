@@ -58,6 +58,7 @@ class TemplateApiDeploymentStack(Stack):
         fargate_service = ecs_patterns.ApplicationLoadBalancedFargateService(
             self,
             f"{id}ALBFargateService",
+            service_name=f"{id}ALBFargateService",
             cpu=256,
             memory_limit_mib=512,
             assign_public_ip=True,
