@@ -66,9 +66,8 @@ class TemplateApiDeploymentStack(Stack):
             task_image_options=task_image_options,
             desired_count=1,
             health_check_grace_period=Duration.seconds(60),
+            circuit_breaker=ecs.DeploymentCircuitBreaker(rollback=True)
         )
-
-
 
         # Configure the health check path and response codes
         fargate_service.target_group.configure_health_check(
